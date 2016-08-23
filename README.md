@@ -6,6 +6,6 @@
   
   批处理支持linux路径
   
-  可方便配置基于Node.exe的一系列前端脚手架相关环境构建系统。
+  可方便配置基于Node.exe的一系列前端脚手架相关环境构建系统及WEB服务器。
   
-  支持Google Closure JS压缩、Yohoo JS、CSS压缩、rsync同步、WEB服务器（serv-start.bat）及Linux下常用命令。
+  支持Google Closure JS压缩、Yohoo JS、CSS压缩、rsync同步及Linux下常用命令。
