@@ -28,8 +28,8 @@ if /i "%param%"=="nginx" (
     echo Starting Redis
     set current=%cd%
     cd %ROOT%tool\serv\redis
-    RunHiddenConsole redis-server.exe redis.conf
-    RunHiddenConsole redis-cli.exe -h 127.0.0.1 -p 6379
+    nohup redis-server.exe redis.conf
+    nohup redis-cli.exe -h 127.0.0.1 -p 6379
     cd /d %current%
     if /i %tof%==1 goto end
     
@@ -40,13 +40,13 @@ if /i "%param%"=="nginx" (
     
 :php
     echo Starting Php
-    RunHiddenConsole %ROOT%tool\serv\php\php-cgi.exe -b 127.0.0.1:9000 -c %ROOT%tool\serv\php\php.ini
-    RunHiddenConsole %ROOT%tool\serv\php\php-cgi.exe -b 127.0.0.1:9001 -c %ROOT%tool\serv\php\php.ini
+    nohup %ROOT%tool\serv\php\php-cgi.exe -b 127.0.0.1:9000 -c %ROOT%tool\serv\php\php.ini
+    nohup %ROOT%tool\serv\php\php-cgi.exe -b 127.0.0.1:9001 -c %ROOT%tool\serv\php\php.ini
     if /i %tof%==1 goto end
     
 :nginx
     echo Starting Nginx
-    RunHiddenConsole %ROOT%tool\serv\nginx\nginx.exe -p %ROOT%tool\serv\nginx
+    nohup %ROOT%tool\serv\nginx\nginx.exe -p %ROOT%tool\serv\nginx
     if /i %tof%==1 goto end
     
 :end
