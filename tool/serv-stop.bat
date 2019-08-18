@@ -26,7 +26,6 @@ if /i "%param%"=="nginx" (
 
 :redis
     echo Stoping Redis
-    taskkill /f /im redis-cli.exe > nul
     taskkill /f /im redis-server.exe > nul
     if /i %tof%==1 goto end
     
@@ -46,3 +45,4 @@ if /i "%param%"=="nginx" (
     if /i %tof%==1 goto end
     
 :end
+set tof=0
